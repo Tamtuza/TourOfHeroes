@@ -1,0 +1,41 @@
+<h2>Choose your heroes</h2>
+
+<h4>Player #1</h4>
+
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+  [class.selected]="hero === selectedHero1"
+  (click)="selectPlayer1(hero)">
+    <span>{{hero.name}}</span>
+  </li>
+</ul>
+
+<div *ngIf="selectedHero1">
+  <h2>
+    {{selectedHero1.name | uppercase}} is my hero
+  </h2>
+</div>
+
+<h4>Player #2</h4>
+
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+  [class.selected]="hero === selectedHero2"
+  (click)="selectPlayer2(hero)">
+    <span>{{hero.name}}</span>
+  </li>
+</ul>
+
+<div *ngIf="selectedHero2">
+  <h2>
+    {{selectedHero2.name | uppercase}} is my hero
+  </h2>
+</div>
+
+<button id="btnStart" (click)="startFight()" class="disabled">Start!</button>
+
+<div *ngIf="winner">
+  <h2>
+    {{winner.name | uppercase}} ganhou!
+  </h2>
+</div>
