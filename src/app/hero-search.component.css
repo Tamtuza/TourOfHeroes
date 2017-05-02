@@ -14,5 +14,9 @@
 }
 #search-box{
   width: 200px;
-  height: 20px;
+  height: 30px;
+  padding-left: 5%;
+  background-color: #e6e7e8;
+  border-style: hidden;
+  border-radius: 4px;
 }

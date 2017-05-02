@@ -20,20 +20,22 @@ var FightComponent = (function () {
             .then(function (heroes) { return _this.heroes = heroes; });
     };
     FightComponent.prototype.selectPlayer1 = function (hero) {
+        this.winner = null;
         this.selectedHero1 = hero;
         this.isEqual();
-        this.habilitaBtn();
     };
     FightComponent.prototype.selectPlayer2 = function (hero) {
+        this.winner = null;
         this.selectedHero2 = hero;
         this.isEqual();
-        this.habilitaBtn();
     };
     FightComponent.prototype.isEqual = function () {
         if (this.selectedHero1 === this.selectedHero2) {
             this.selectedHero1 = null;
             this.selectedHero2 = null;
         }
+        else
+            this.habilitaBtn();
     };
     FightComponent.prototype.habilitaBtn = function () {
         if (this.selectedHero1 && this.selectedHero2 != null) {
@@ -46,7 +48,7 @@ var FightComponent = (function () {
     FightComponent.prototype.startFight = function () {
         var _this = this;
         this.desabilitaBtn();
-        this.showBattle();
+        this.showBattle(true);
         // Simulate latency between 2 and 5 seconds delay
         return new Promise(function (resolve) {
             setTimeout(function () { return resolve(_this.chooseWinner()); }, Math.floor(Math.random() * (5000 - 2000 + 1)) + 2000);
@@ -57,10 +59,12 @@ var FightComponent = (function () {
         switch (Math.floor(Math.random() * (1 - 0 + 1)) + 0) {
             case 0: {
                 this.habilitaBtn();
+                this.showBattle(false);
                 return this.winner = this.selectedHero1;
             }
             case 1: {
                 this.habilitaBtn();
+                this.showBattle(false);
                 return this.winner = this.selectedHero2;
             }
             default: {
@@ -68,8 +72,14 @@ var FightComponent = (function () {
             }
         }
     };
-    FightComponent.prototype.showBattle = function () {
-        // Fazer algo pra retornar visualmente ao usuário que a luta começou
+    FightComponent.prototype.showBattle = function (show) {
+        var div = document.getElementById("resposta");
+        if (show == true) {
+            div.innerHTML = "Heroes are dueling";
+        }
+        else if (show == false) {
+            div.innerHTML = "";
+        }
     };
     return FightComponent;
 }());

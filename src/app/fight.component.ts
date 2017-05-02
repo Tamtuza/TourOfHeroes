@@ -25,22 +25,23 @@ export class FightComponent implements OnInit {
   }
 
   selectPlayer1(hero: Hero): void {
+    this.winner = null;
     this.selectedHero1 = hero;
     this.isEqual();
-    this.habilitaBtn();
   }
 
   selectPlayer2(hero: Hero): void {
+    this.winner = null;
     this.selectedHero2 = hero;
     this.isEqual();
-    this.habilitaBtn();
   }
 
   isEqual() {
     if (this.selectedHero1 === this.selectedHero2) {
       this.selectedHero1 = null;
       this.selectedHero2 = null;
-    }
+    } else
+        this.habilitaBtn();
   }
 
   habilitaBtn() {
@@ -55,7 +56,7 @@ export class FightComponent implements OnInit {
 
   startFight(): Promise<Hero[]> {
           this.desabilitaBtn();
-          this.showBattle();
+          this.showBattle(true);
           // Simulate latency between 2 and 5 seconds delay
           return new Promise(resolve => {
             setTimeout(() => resolve(this.chooseWinner()),
@@ -68,10 +69,12 @@ export class FightComponent implements OnInit {
   switch(Math.floor(Math.random() * (1 - 0 + 1)) + 0) {
      case 0: {
         this.habilitaBtn();
+        this.showBattle(false);
         return this.winner = this.selectedHero1;
      }
      case 1: {
         this.habilitaBtn();
+        this.showBattle(false);
         return this.winner = this.selectedHero2;
      }
      default: {
@@ -80,7 +83,12 @@ export class FightComponent implements OnInit {
    }
   }
 
-  showBattle() {
-    // Fazer algo pra retornar visualmente ao usuário que a luta começou
+  showBattle(show : Boolean) {
+    var div = document.getElementById("resposta");
+    if (show == true) {
+      div.innerHTML = "Heroes are dueling";
+    } else if (show == false) {
+      div.innerHTML = "";
+    }
   }
 }
