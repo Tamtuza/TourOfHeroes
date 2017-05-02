@@ -4,17 +4,20 @@ Projeto desenvolvido com Angular e Typescript, usando como base o "Tour of Heroe
 
 Esse projeto foi desenvolvido para um teste de habilidades em front-end e foi proposto pela StudioApp.
 
-# Criar e configurar um novo projeto:
+## Criar e configurar um novo projeto:
 
 [Setup local environment](https://angular.io/docs/ts/latest/guide/setup.html)
 
-# Tutorial com principais conceitos do Angular
+## Tutorial com principais conceitos do Angular
 
 [Tutorial Tour of heroes](https://angular.io/docs/ts/latest/tutorial/)
 
-###REFERÊNCIAS:
+### REFERÊNCIAS:
 
 [Angular](https://angular.io/)
+
 [Typescript](https://www.typescriptlang.org/)
+
 [NodeJS](https://nodejs.org/en/)
+
 [NPM](https://www.npmjs.com)
