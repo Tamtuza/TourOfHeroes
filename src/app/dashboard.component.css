@@ -1,5 +1,12 @@
+header {
+  margin: 0;
+  padding: 2% 0 2% 15%;
+}
+section {
+  text-align: center;
+  padding-top: 10%;
+}
 [class*='col-'] {
-  float: left;
   padding-right: 20px;
   padding-bottom: 20px;
 }
@@ -14,31 +21,31 @@ a {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-h3 {
-  text-align: center; margin-bottom: 0;
+h2 {
+  margin: 0;
 }
 h4 {
   position: relative;
 }
 .grid {
-  margin: 0;
 }
 .col-1-4 {
-  width: 25%;
 }
 .module {
+  width: 20%;
+  display: inline-grid;
   padding: 20px;
   text-align: center;
-  color: #eee;
+  color: #fff;
   max-height: 120px;
   min-width: 120px;
-  background-color: #607D8B;
+  background-color: #333333;
   border-radius: 2px;
 }
 .module:hover {
-  background-color: #EEE;
+  background-color: #DDD;
   cursor: pointer;
-  color: #607d8b;
+  color: #c01818;
 }
 .grid-pad {
   padding: 10px 0;

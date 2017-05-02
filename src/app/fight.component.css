@@ -1,0 +1,98 @@
+section {
+  padding: 5%;
+  text-align: center;
+}
+article {
+  float: right;
+  width: 75%;
+}
+.painel-luta{
+  float: left;
+  text-align: center;
+  width: 67%;
+  padding-top: 20%;
+}
+.player-one{
+  float: left;
+  text-align: left;
+  width: 25%;
+}
+.player-two{
+  float: right;
+  text-align: right;
+  width: 33%;
+}
+.selected {
+    background-color: #c01818 !important;
+    color: white;
+  }
+  .heroes {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 10em;
+  }
+  .heroes li {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    color: #fff;
+    background-color: #333333;
+    padding: .6em;
+    height: 1.6em;
+    border-bottom: 1px solid #fff;
+  }
+  .heroes li.selected:hover {
+    background-color: #CDCDCD !important;
+    color: white;
+  }
+  .heroes li:hover {
+    color: #c01818;
+    background-color: #CDCDCD;
+    left: .1em;
+  }
+  .heroes .text {
+    position: relative;
+    top: -3px;
+  }
+  .heroes .badge {
+    display: inline-block;
+    font-size: small;
+    color: white;
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color: #607D8B;
+    line-height: 1em;
+    position: relative;
+    left: -1px;
+    top: -4px;
+    height: 1.8em;
+    margin-right: .8em;
+    border-radius: 4px 0 0 4px;
+  }
+  .chosen-one {
+    text-align: center;
+    float: left;
+  }
+  .chosen-two {
+    text-align: center;
+    float: right;
+  }
+
+  button {
+    font-family: Arial;
+    color: #fff;
+    background-color: #c01818;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    cursor: hand;
+  }
+  button:hover {
+    background-color: #000;
+  }
+  .disabled {
+    pointer-events:none;
+    background-color: #eee;
+    cursor: wait;
+  }

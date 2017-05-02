@@ -1,0 +1,51 @@
+<section>
+  <h2>Choose your heroes</h2>
+<!-- Player one -->
+  <aside class="player-one">
+    <h4>Player #1</h4>
+
+    <ul class="heroes player-one">
+      <li *ngFor="let hero of heroes"
+      [class.selected]="hero === selectedHero1"
+      (click)="selectPlayer1(hero)">
+        <span>{{hero.name}}</span>
+      </li>
+    </ul>
+  </aside>
+<!-- Player one -->
+  <article>
+    <div class="painel-luta">
+      <button id="btnStart" (click)="startFight(); showBattle()" class="disabled">Start!</button>
+        <h2 id="resposta">
+          <!-- Espaço para exibir ao usuário informações sobre a luta -->
+        </h2>
+      <div *ngIf="winner">
+        <h2>
+          {{winner.name | uppercase}} won the battle!
+        </h2>
+      </div>
+    </div>
+<!-- Player two -->
+    <aside class="player-two">
+      <h4>Player #2</h4>
+      <ul class="heroes player-two">
+        <li *ngFor="let hero of heroes"
+        [class.selected]="hero === selectedHero2"
+        (click)="selectPlayer2(hero)">
+          <span>{{hero.name}}</span>
+        </li>
+      </ul>
+    </aside>
+<!-- Player two -->
+  </article>
+  <div *ngIf="selectedHero1" class="chosen-one">
+    <h3>
+      {{selectedHero1.name}} is my hero
+    </h3>
+  </div>
+  <div *ngIf="selectedHero2" class="chosen-two">
+    <h3>
+      {{selectedHero2.name}} is my hero
+    </h3>
+  </div>
+</section>
